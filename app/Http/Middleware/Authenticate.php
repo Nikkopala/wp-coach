@@ -14,8 +14,15 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
-        }
+        // if (! $request->expectsJson()) {
+        //     return route('login');
+        // }
+        // MODIFICA FATTA DA IONUT PER RESTITUIRE UNA RISPOSTA PIÙ CONSONA A CHI CHIEDE JSON DA IONUT
+        if ($request->ajax() || $request->wantsJson()) {
+           return response('Unauthorized.', 401);
+       } else {
+           return route('login');
+       }
+        
     }
 }
