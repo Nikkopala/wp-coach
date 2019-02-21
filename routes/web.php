@@ -22,3 +22,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/{id}', 'UserController@show')->middleware('auth');
 
 Route::get('/users', 'UserController@index')->middleware('auth');
+
+Route::get('/profile', 'UserController@profile')->name('profile')->middleware('auth');
+Route::get('/profile/avatar', [
+     'as'         => 'profile.show_avatar',
+     'uses'       => 'UserController@show_avatar',
+     'middleware' => 'auth',
+]);
+
+Route::post('profile/upload_avatar', 'UserController@upload_avatar')->name('upload_avatar')->middleware('auth');
