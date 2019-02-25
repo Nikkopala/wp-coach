@@ -30,4 +30,4 @@ Route::get('/profile/avatar', [
      'middleware' => 'auth',
 ]);
 
-Route::post('profile/upload_avatar', 'UserController@upload_avatar')->name('upload_avatar')->middleware('auth');
+Route::post('profile/save', 'UserController@save')->name('profile-Save')->middleware('auth');
