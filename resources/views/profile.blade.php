@@ -21,6 +21,11 @@
                 </div>
                 <div class=col>
                     <pre>{{Auth::user()->toJson(JSON_PRETTY_PRINT)}}</pre>
+                    <ul>
+                        @foreach(Auth::user()->clubs as $club)
+                        <li>{{ $club->name }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

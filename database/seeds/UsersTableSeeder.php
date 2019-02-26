@@ -14,26 +14,26 @@ class UsersTableSeeder extends Seeder
     {
         $seeds = [
             [
-                'name' =>'nikkopala',
-                'email' => 'nikkopala@gmail.com',
+                'name' =>'Niccolò Paldino',
+                'email' => 'niccolo.paldino@gmail.com',
                 'email_verified_at' => date("Y-m-d H:i:s"),
                 'password' => bcrypt('password'),
             ],
             [
-                'name' =>'nikkopala2',
-                'email' => 'nikkopala+2@gmail.com',
+                'name' =>'Pasquale Trippa',
+                'email' => 'pasquale.trippa@gmail.com',
                 'email_verified_at' => date("Y-m-d H:i:s"),
                 'password' => bcrypt('password'),
             ],
             [
-                'name' =>'nikkopala2',
-                'email' => 'nikkopala+3@gmail.com',
+                'name' =>'Daniele Roccia',
+                'email' => 'daniele.roccia@gmail.com',
                 'email_verified_at' => date("Y-m-d H:i:s"),
                 'password' => bcrypt('password'),
             ],
             [
-                'name' =>'nikkopala4',
-                'email' => 'nikkopala+4@gmail.com',
+                'name' =>'Andrea Sgerbi',
+                'email' => 'andrea.sgerbi@gmail.com',
                 'email_verified_at' => date("Y-m-d H:i:s"),
                 'password' => bcrypt('password'),
             ],
