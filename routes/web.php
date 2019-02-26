@@ -19,15 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/user/{id}', 'UserController@show')->middleware('auth');
-
-Route::get('/users', 'UserController@index')->middleware('auth');
-
-Route::get('/profile', 'UserController@profile')->name('profile')->middleware('auth');
+Route::get('/profile', 'WebControllers\UserController@profile')->name('profile')->middleware('auth');
 Route::get('/profile/avatar', [
      'as'         => 'profile.show_avatar',
-     'uses'       => 'UserController@show_avatar',
+     'uses'       => 'WebControllers\UserController@show_avatar',
      'middleware' => 'auth',
 ]);
 
-Route::post('profile/save', 'UserController@save')->name('profile-Save')->middleware('auth');
+Route::post('profile/save', 'WebControllers\UserController@save')->name('profile-Save')->middleware('auth');

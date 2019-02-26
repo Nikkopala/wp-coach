@@ -17,8 +17,8 @@ use Illuminate\Http\Request;
 //     return $request->user()->all();
 // });
 
-Route::get('/user/{id}', 'UserController@show')->middleware('auth:api');
+Route::get('/user/{id}', 'ApiControllers\UserController@show')->middleware('auth:api');
 
-Route::get('/users', 'UserController@index')->middleware('auth:api');
+Route::get('/users', 'ApiControllers\UserController@index')->middleware('auth:api');
 
-Route::post('user/{id}','UserController@update')->middleware('auth:api');
+Route::post('user/{id}','ApiControllers\UserController@update')->middleware('auth:api');
