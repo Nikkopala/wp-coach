@@ -55,8 +55,8 @@ class UserController extends Controller
     public function show_avatar(){
         try {
             $storagePath = storage_path('app/avatar/' . \Auth::user()->avatar);
-            $output = new \Symfony\Component\Console\Output\ConsoleOutput();
-            $output->writeln($storagePath);
+            // $output = new \Symfony\Component\Console\Output\ConsoleOutput();
+            // $output->writeln($storagePath);
             $avatar = Image::make($storagePath)->response();
         } catch( NotReadableException $e) {
             $storagePath = storage_path('app/avatar/user.png');
