@@ -3,12 +3,12 @@
 @section('content')
 <div class="card pb-4">
     <div class="card-header">
-        <h1>{{Auth::user()->name}}</h1>
+        <h1>{{$user->name}}</h1>
     </div>
     <div class="card-body">
         <div class="row justify-content-center align-items-center">
             <div class="col-auto text-center">
-                <img src="{{route('profile.show_avatar', ['user_id' => Auth::user()->id] ) }}" alt="Immagine di profilo">
+                <img src="{{route('profile.show_avatar', ['user_id' => $user->id] ) }}" alt="Immagine di profilo">
                 <br>
 
                 {!! Form::open(['url' => 'profile/save', 'files' => true, 'method' => 'POST', 'class'=>'custom-file', 'id'=>"avatar_upload_form"]) !!}
@@ -19,9 +19,9 @@
 
             </div>
             <div class=col>
-                <pre>{{Auth::user()->toJson(JSON_PRETTY_PRINT)}}</pre>
+                <pre>{{$user->toJson(JSON_PRETTY_PRINT)}}</pre>
                 <ul>
-                    @foreach(Auth::user()->clubs as $club)
+                    @foreach($user->clubs as $club)
                     <li>{{ $club->name }}</li>
                     @endforeach
                 </ul>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\WebControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
+// use App\User;
 use Intervention\Image\Facades\Image;
 use Intervention\Image\Exception\NotReadableException;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
     public function profile (){
-        return view('profile');
+        $user = \Auth::user();
+        return view('profile')->with('user', $user);;
     }
 
     public function show_avatar(){
