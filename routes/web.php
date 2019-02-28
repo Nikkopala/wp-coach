@@ -12,14 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (\Auth::user() ) {
+        return redirect ('/home');
+    } else {
+        return view('welcome');
+    }
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/profile', 'WebControllers\UserController@profile')->name('profile')->middleware('auth');
+
 Route::get('/profile/avatar', [
      'as'         => 'profile.show_avatar',
      'uses'       => 'WebControllers\UserController@show_avatar',
