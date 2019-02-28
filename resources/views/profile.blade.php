@@ -3,7 +3,7 @@
 @section('content')
 <div class="card pb-4">
     <div class="card-header">
-        <h1>{{$user->name}}</h1>
+        <h2>{{$user->name}}</h2>
     </div>
     <div class="card-body">
         <div class="row justify-content-center align-items-center">
