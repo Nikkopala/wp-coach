@@ -22,7 +22,12 @@
              aria-labelledby="club-heading-{{$loop->index}}"
              data-parent="#clubAccordion">
             <div class="card-body">
-                lista squadre
+                {{-- {{$club->teams}} --}}
+                @foreach ($club->teams as $team)
+                    <p>
+                        {{$team["name"]}}
+                    </p>
+                @endforeach
             </div>
         </div>
     </div>
